@@ -2,45 +2,80 @@
 
 Bộ khung nền tảng có thể tái sử dụng cho các dự án phần mềm, không phụ thuộc vào ngôn ngữ lập trình hoặc công nghệ cụ thể.
 
+## Giới thiệu
+
+Universal Project Template cung cấp cấu trúc khởi đầu thống nhất cho dự án phần mềm, kết hợp Hermes Agent, Spec Kit, Git và các nguyên tắc kỹ thuật có thể tùy chỉnh theo từng dự án.
+
 ## Thành phần
 
-- **Spec Kit:** Phát triển phần mềm theo phương pháp đặc tả trước khi triển khai (Specification-Driven Development).
-- **Hermes Agent:** Tích hợp Hermes Agent thông qua các kỹ năng (Skills) được cài đặt ở cấp hệ thống.
-- **Constitution:** Quy định các nguyên tắc về kỹ thuật phần mềm, kiến trúc và bảo mật.
-- **AGENTS.md:** Tệp hướng dẫn chung dành cho các AI Agent tham gia phát triển dự án.
-- **Thư mục tài liệu, mã nguồn, kiểm thử và tập lệnh:** Cung cấp cấu trúc tổ chức thống nhất cho dự án.
-- **Git Ignore và EditorConfig:** Cấu hình chung nhằm quản lý tệp và duy trì định dạng mã nguồn nhất quán.
+- **Spec Kit:** Phát triển phần mềm theo phương pháp đặc tả trước khi triển khai.
+- **Hermes Agent:** Hỗ trợ phân tích, lập kế hoạch và thực hiện công việc phát triển thông qua các kỹ năng được cài đặt ở cấp người dùng.
+- **Constitution:** Quy định các nguyên tắc về kiến trúc, chất lượng, bảo mật và trách nhiệm.
+- **AGENTS.md:** Hướng dẫn chung dành cho AI Agent làm việc trong repository.
+- **docs/, src/, tests/, scripts/:** Cấu trúc ban đầu cho tài liệu, mã nguồn, kiểm thử và tự động hóa.
+- **Git Ignore và EditorConfig:** Cấu hình quản lý tệp và định dạng nhất quán.
 
-## Yêu cầu
+## Bắt đầu nhanh
 
-Cài đặt và cấu hình các công cụ cần thiết tương ứng với công nghệ được lựa chọn cho từng dự án.
+### Tạo dự án trên Ubuntu bằng script `new-project`
 
-Các công cụ sau cần có sẵn trong môi trường phát triển:
+```bash
+new-project ten-du-an
+cd ~/projects/ten-du-an
+hermes
+```
 
-- Spec Kit CLI.
-- Hermes Agent.
+Bắt đầu quy trình đặc tả trong Hermes:
 
-## Khởi tạo dự án mới
+```text
+/speckit-specify
+```
 
-1. Sao chép hoặc nhân bản bộ khung này vào thư mục dự án mới.
-2. Cập nhật tệp README.md để mô tả mục đích, chức năng và hướng dẫn sử dụng của dự án.
-3. Đọc và rà soát `AGENTS.md` cùng `.specify/memory/constitution.md`.
-4. Mở thư mục dự án bằng Hermes Agent.
-5. Bắt đầu quy trình Spec Kit bằng lệnh `/speckit-specify`.
-6. Tiếp tục các giai đoạn làm rõ yêu cầu, lập kế hoạch, tạo danh sách công việc và triển khai.
+### Tạo dự án từ GitHub
+
+1. Mở [Universal Project Template](https://github.com/thanh577/universal-project-template).
+2. Chọn **Use this template** → **Create a new repository**.
+3. Đặt tên repository mới và chọn quyền truy cập.
+4. Clone repository mới về máy rồi bắt đầu phát triển.
+
+## Hướng dẫn sử dụng chi tiết
+
+Xem **[GUIDE.md — Hướng dẫn sử dụng Universal Project Template](GUIDE.md)** để biết:
+
+- Cài đặt và kiểm tra môi trường.
+- Tạo dự án bằng Terminal hoặc GitHub.
+- Giải thích cấu trúc thư mục.
+- Ví dụ xây dựng ứng dụng Expense Tracker bằng Python.
+- Sử dụng Hermes Agent, Spec Kit và sub-agent.
+- Quy trình Git từ cơ bản đến nâng cao.
+- Bảo mật, cập nhật template, checklist và xử lý lỗi.
 
 ## Cấu trúc dự án
 
-- `.specify/`: Chứa các bản đặc tả, mẫu tài liệu, tập lệnh và hiến chương dự án.
-- `.hermes/`: Chứa cấu hình Hermes Agent ở cấp dự án nếu cần; thư mục này được loại trừ khỏi Git.
-- `docs/`: Chứa tài liệu kiến trúc và tài liệu kỹ thuật.
-- `scripts/`: Chứa các tập lệnh phục vụ phát triển và tự động hóa.
-- `src/`: Chứa mã nguồn của ứng dụng.
-- `tests/`: Chứa các bài kiểm thử tự động.
-- `AGENTS.md`: Chứa hướng dẫn dành cho các AI Agent tham gia phát triển dự án.
+- `.specify/`: Đặc tả, mẫu tài liệu, script và hiến chương dự án.
+- `.hermes/`: Cấu hình Hermes Agent ở cấp dự án nếu cần; được loại trừ khỏi Git.
+- `docs/`: Tài liệu kiến trúc và quyết định kỹ thuật.
+- `scripts/`: Tập lệnh phát triển và tự động hóa.
+- `src/`: Mã nguồn ứng dụng.
+- `tests/`: Kiểm thử tự động.
+- `AGENTS.md`: Hướng dẫn dành cho AI Agent.
+- `GUIDE.md`: Hướng dẫn sử dụng template chi tiết.
 
 ## Lựa chọn công nghệ
 
-Bộ khung này không áp đặt bất kỳ ngôn ngữ lập trình hoặc framework cụ thể nào.
+Template không áp đặt ngôn ngữ lập trình hoặc framework cụ thể. Hãy chọn công nghệ theo yêu cầu thực tế của từng dự án và ghi lại các quyết định quan trọng trong tài liệu đặc tả, kế hoạch triển khai hoặc ADR.
 
-Hãy lựa chọn công nghệ dựa trên yêu cầu thực tế của từng dự án. Các quyết định về công nghệ cần được mô tả rõ ràng trong tài liệu đặc tả và kế hoạch triển khai.
+## Yêu cầu
+
+Cài đặt các công cụ phù hợp với công nghệ được chọn. Môi trường phát triển cần có:
+
+- Git.
+- Hermes Agent.
+- Spec Kit CLI và các kỹ năng Spec Kit tương ứng trong Hermes.
+
+GitHub CLI (`gh`) là tùy chọn, hữu ích khi quản lý repository GitHub từ Terminal.
+
+## Repository
+
+- GitHub: https://github.com/thanh577/universal-project-template
+- Phiên bản nền tảng: `v1.0.0`
